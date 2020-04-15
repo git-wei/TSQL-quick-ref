@@ -1,0 +1,79 @@
+1. SQL has been there for over 50 years...
+
+2. T-SQL is a SQL dialect used on MicroSoft SQL Server
+
+3. MicroSoft SQL Server is a RDBMS of popularity
+
+4. SQL server object hierarchy
+	OS --> one or more SQL server instances --> one or more DBs --> one or more Schemas --> tables + views + store procedures (real objects)
+
+5. Fully qualified object names
+	Instance.Database.Schema.Object
+
+6. MicorSoft SQL Server, the DBMS
+   SQL Server Management Studio, SSMS, the IDE
+   Azure Data Studio
+
+7. SQL clause execution order
+   1) FROM: Defines the source data set
+   2) WHERE: Row filter
+   3) GROUP BY: Combines rows into groups
+   4) HAVING: Group filter
+   5) SELECT: List of expressions to return
+   6) ORDER BY: Presentation order
+   7) OFFSET - FETCH: Paging specification 
+Note: SELECT is to return/present the list of expressions
+
+8. Rows : Tuples of elements of relation
+   Rows are unique and are garanted by key
+   Columns: Tuples of attributes
+   A set by definition has no order, the rows have no order
+
+9. Data types in T-SQL
+   Numeric: integer, float, double
+   Strings: string
+   Binary: binary
+   Temporal: date and time
+   Hierarchy:
+   Spatial:
+   Document: unstructured data types, such as JSON and XML
+   T-SQL does not have Interval and Boolean
+
+10. For the FROM clause 
+   For data in different data sets, need to use join
+   CROSS JOIN: Cartisien product
+   INNER JOIN: Cartisien product on conditions
+   LEFT OUTER JOIN: 
+
+11. For the WHERE clause
+    NULL: missing or inapplicable data, marker/state but not a value!
+    3VL (ternary) logic: True, False, Unknown
+    Logical operators: AND, OR, NOT, =
+                       ALL, x > ALL(A,B,C)
+                       ANY/SOME, x > ANY|SOME (A,B,C)
+                       IN, x IN (A,B,C)
+                       BETWEEN, x BETWEEN A AND B
+                       LIKE, x LIKE (<pattern>), '%' is wildcard represents zero or more characters
+
+12. Grouping rows
+    Common aggregate functions
+		Minimum, Maximum, Average, Count, Standard deviation, Variance
+
+13. SELECT expressions
+	ALL will keep duplicate rows and is default
+	DISTINCT will eliminate duplicate rows
+	SELECT expressions executes at the same time for each row
+	ISNULL(X,Y) function, if X IS NULL, return Y
+	COALESCE(X,Y,Z) return the first known (not null)
+
+14. Ordering and Paging
+	A set being ordered is no longer a set, but a cursor
+	Ordering is useful, but is not the responsibility of the DB
+	Three tier architecture: presentation, business, database
+	Ascending is default, and also indicate descending
+	NULL in T-SQL assume the lowest ordering value
+
+15. T-SQL has two ways to limit result sets
+	TOP(N): Executed before SELECT expressions and after the DISTINCT
+	OFFSET FETCH: LIMIT N OFFSET M
+	OFFSET M ROWS FETCH NEXT N ROWS

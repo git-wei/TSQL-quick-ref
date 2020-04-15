@@ -1,0 +1,18 @@
+1. (NOT) BETWEEN num/date AND num/date
+	BETWEEN '2019-12-31' AND '2020-04-15'
+	DATE('2019-12-31')
+	DATE_ADD('2019-12-31', INTERVAL -3 DAY)
+
+2. ROUND(num,2)
+	round the result to .00
+
+3. CAST(num AS DECIMAL(10,2))
+
+4. IFNULL(num, 0)
+   COALESCE(num1, num2, 0)
+
+5. IF(condition, res1, res2)
+   CASE
+	WHEN condition THEN res1
+	ELSE res2
+   END
