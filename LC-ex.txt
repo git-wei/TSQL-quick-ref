@@ -16,3 +16,10 @@
 	WHEN condition THEN res1
 	ELSE res2
    END
+
+6. MOD(id,2)=1, LC 620
+   id%2=1, id%2!=0
+   str = 'boring'
+
+7. SELECT COUNT() LC1173
+   AVG(ALL/DISTINCT name)
